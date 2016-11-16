@@ -6,6 +6,8 @@
 [![Latest Stable Version](https://poser.pugx.org/robmorgan/phinx/version.png)](https://packagist.org/packages/robmorgan/phinx)
 [![Total Downloads](https://poser.pugx.org/robmorgan/phinx/d/total.png)](https://packagist.org/packages/robmorgan/phinx)
 
+> mailspice/phinx integrates PR [robmorgan/phinx#930](https://github.com/robmorgan/phinx/pull/930) to fix [robmorgan/phinx#915: phinxlog table in schema fails](https://github.com/robmorgan/phinx/issues/915).
+
 Phinx makes it ridiculously easy to manage the database migrations for your PHP app. In less than 5 minutes you can install Phinx and create your first database migration. Phinx is just about migrations without all the bloat of a database ORM system or framework.
 
 **Check out http://docs.phinx.org for the comprehensive documentation.**

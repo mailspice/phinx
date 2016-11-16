@@ -1180,4 +1180,24 @@ class PostgresAdapter extends PdoAdapter implements AdapterInterface
     {
         return (bool) $value ? 'TRUE' : 'FALSE';
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function getVersions()
+    {
+        $this->fetchAll(sprintf('SET search_path TO %s', $this->getSchemaName()));
+
+        return parent::getVersions();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getVersionLog()
+    {
+        $this->fetchAll(sprintf('SET search_path TO %s', $this->getSchemaName()));
+
+        return parent::getVersionLog();
+    }
 }
