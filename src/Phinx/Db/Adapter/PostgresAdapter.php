@@ -1039,7 +1039,7 @@ class PostgresAdapter extends PdoAdapter implements AdapterInterface
             $this->createSchema($this->getSchemaName());
         }
 
-        $this->fetchAll(sprintf('SET search_path TO %s', $this->getSchemaName()));
+        $this->fetchAll(sprintf('SET search_path TO %s,"$user",public', $this->getSchemaName()));
 
         return parent::createSchemaTable();
     }
@@ -1186,7 +1186,7 @@ class PostgresAdapter extends PdoAdapter implements AdapterInterface
      */
     public function getVersions()
     {
-        $this->fetchAll(sprintf('SET search_path TO %s', $this->getSchemaName()));
+        $this->fetchAll(sprintf('SET search_path TO %s,"$user",public', $this->getSchemaName()));
 
         return parent::getVersions();
     }
@@ -1196,7 +1196,7 @@ class PostgresAdapter extends PdoAdapter implements AdapterInterface
      */
     public function getVersionLog()
     {
-        $this->fetchAll(sprintf('SET search_path TO %s', $this->getSchemaName()));
+        $this->fetchAll(sprintf('SET search_path TO %s,"$user",public', $this->getSchemaName()));
 
         return parent::getVersionLog();
     }
